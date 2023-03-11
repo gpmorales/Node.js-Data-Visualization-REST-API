@@ -186,8 +186,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 			connection.on('error', (error) => console.error(error)); 
 			
 		}); //END OF PROMISE OBJECT
-
-							process.exit(0);//****************************************************************************************************************************
+					
 	} //END OF TRY Block
 
 	catch(err){
