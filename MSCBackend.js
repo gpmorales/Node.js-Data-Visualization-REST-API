@@ -116,8 +116,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 						
 						/*
 						//Weekly CSV -> the data we query from the stream should be between 25 hours ago and 1 hour ago
-						if(DateParams[1] <= RowTimeStamp && RowTimeStamp <= DateParams[2] && row.pm25 != ''){
-							//ADD to JSON object
+						if(DateParams[1] <= RowTimeStamp && RowTimeStamp <= DateParams[2] && row.pm25 != ''){ //ADD to JSON object
 							if(!TIMESTAMP_FORMATTING(row.date)) row.date = FORMAT_CORRECTION(row.date);
 							QueriedData.push(row);
 						} 
@@ -440,25 +439,13 @@ function LongTermParameters(){
 		Month_csv3 = months[10] + (csv_Year - 1); //Nov
 		Month_csv4 = months[9] + (csv_Year - 1); //Oct
 	}
-
-	/*
+	
 	csvSheets.push(Month_csv4);
 	csvSheets.push(Month_csv3);
 	csvSheets.push(Month_csv2);
 	csvSheets.push(Month_csv1);
 
 	return [csvSheets, startTriYearlyDate, endTriYearlyDate, startDateMonthly];
-	*/
-
-	csvSheets.push("/home/gpmoral/Public/Dec21.csv");
-	csvSheets.push("/home/gpmoral/Public/Jan22.csv");
-	csvSheets.push("/home/gpmoral/Public/Feb22.csv");
-	csvSheets.push("/home/gpmoral/Public/Mar22.csv");
-
-	return [csvSheets, new Date(new Date(2021,11,30,0,0,0) - 5 * 60 * 60 * 1000),
-										 new Date(new Date(2022,2,31,0,0,0) - 5 * 60 * 60 * 1000), 
-										 new Date(new Date(2022,1,27,0,0,0) - 5 * 60 * 60 * 1000) //startDateMonthly
-	];
 } 
 
 
@@ -481,7 +468,6 @@ function ShortTermParameters(){
 
 	const months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "August", "Sep", "Oct", "Nov", "Dec"]
 
-	/*
 	//Create File Paths
 	if(date.getDate() >= 7) csv_path = months[date.getMonth()] + csv_path;
 
@@ -504,9 +490,6 @@ function ShortTermParameters(){
 	const CSVPath = "/home/gpmoral/" + csv_path + ".csv";
 	
 	return [CSVPath, startDateWeekly, endDateWeekly, startDateDaily];
-	*/
-	
-	return ["/home/gpmoral/Music/Mar2023.csv", new Date(2022,0,14,0,0,0), new Date(2022,0,21,0,0,0), new Date(2022,0,20,0,0,0)];
 } 
 
 
