@@ -113,8 +113,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 						// create Datetime object from eash row's Timestamp
 
 						const RowTimeStamp = new Date(row.date);  //time of each row (NOTE if UTC -> date - 5 * 60 * 60 * 1000)
-						
-						/*
+					
 						//Weekly CSV -> the data we query from the stream should be between 25 hours ago and 1 hour ago
 						if(DateParams[1] <= RowTimeStamp && RowTimeStamp <= DateParams[2] && row.pm25 != ''){ //ADD to JSON object
 							if(!TIMESTAMP_FORMATTING(row.date)) row.date = FORMAT_CORRECTION(row.date);
@@ -123,10 +122,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 
 						else if(RowTimeStamp > DateParams[2]){ //Destroy readstream once all data is fetched
 							CSVReadStream.destroy();
-						} */
-
-						if(!TIMESTAMP_FORMATTING(row.date)) row.date = FORMAT_CORRECTION(row.date);
-						QueriedData.push(row);
+						}
 
 					}); // FINISH PARSING STREAM
 
@@ -196,7 +192,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 
 
 
-// TODO **** SIMPLY FILTER CSV AND CALL DAILY R SCRIPT !!!
+// SIMPLY FILTER CSV AND CALL DAILY R SCRIPT !!!
 function DailyGraphics(QueriedData, startDateDaily){ //in this method slice data to be one day in length and run another R file fore graphic
 	// DAILY GRAPHICS
 	console.log("Parsing Daily Data...\n");
@@ -250,7 +246,7 @@ async function LongTermGraphics(request, response){
 
 
 
-//NOTE Return csvObject for graphic when we receive corresponding request for SHORT TERM graphics
+//NOTE Return csvObject for graphic when we receive corresponding request for LONG TERM graphics
 async function QuarterYearlyGraphics(request, response, DateParams){
 	try{
 		// Connect to Our Cluster and Stream through the data & parse CSV sheet here 
