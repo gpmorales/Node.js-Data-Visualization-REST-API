@@ -175,7 +175,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 				host : "lab0z.mathcs.emory.edu",
 				port : 22,
 				username : "gpmoral",
-				password : "gMC12345#$"
+				password : ""
 			});
 			
 			//ERROR Handling for SSH socket connection
@@ -309,7 +309,7 @@ async function QuarterYearlyGraphics(request, response, DateParams){
 					host : "lab0z.mathcs.emory.edu",
 					port : 22,
 					username : "gpmoral",
-					password : "gMC12345#$"
+					password : ""
 				});
 
 			}); //END OF PROMISE
