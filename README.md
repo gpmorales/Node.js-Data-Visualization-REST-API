@@ -1,5 +1,5 @@
 # Node.js-Data-Visualization-REST-API-with-R-Integration-via-SSH
-code is a Node.js server-side program that handles requests for short-term and long-term graphics of data stored in CSV files. 
+This is a Node.js server-side program that handles requests for short-term and long-term graphics of air-quality data stored in CSV files. 
 It uses several Node.js packages and external scripts. 
 The code handles GET requests for air-quality graphics and data stored at the servers in our Math and Science Center.
 These libraries allow the code to perform various tasks, such as parsing CSV files, creating SSH connections, and spawning child processes to run R scripts. 
