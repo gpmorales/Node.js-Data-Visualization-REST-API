@@ -172,7 +172,7 @@ async function WeeklyGraphics(request, response, DateParams, SplitMonths, isCurr
 
 			//Creating Connection to cluster via SSH, using SSH2 clients
 			connection.connect({
-				host : "lab0z.mathcs.emory.edu",
+				host : "mathcs.emory.edu",
 				port : 22,
 				username : "gpmoral",
 				password : ""
@@ -306,7 +306,7 @@ async function QuarterYearlyGraphics(request, response, DateParams){
 
 				//Creating Connection to cluster via SSH, using SSH2 clients
 				connection.connect({
-					host : "lab0z.mathcs.emory.edu",
+					host : "mathcs.emory.edu",
 					port : 22,
 					username : "gpmoral",
 					password : ""
